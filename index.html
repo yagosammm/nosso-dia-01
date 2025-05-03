@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nosso Dia 01</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    header {
+      width: 100%;
+      text-align: center;
+      padding: 30px 10px 10px;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5em;
+      color: #ff4d6d;
+      margin: 0 0 10px;
+      border-radius: 20px;
+      padding: 10px 30px;
+      background-color: rgba(255, 77, 109, 0.1);
+      backdrop-filter: blur(8px);
+      display: inline-block;
+    }
+
+    .timer {
+      font-size: 1.3em;
+      background-color: rgba(255, 77, 109, 0.1);
+      padding: 15px 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 77, 109, 0.4);
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+      color: #ff4d6d;
+    }
+
+    .time-part {
+      padding: 10px 20px;
+      border-radius: 12px;
+      background-color: rgba(255, 77, 109, 0.2);
+    }
+
+    .arrow-down {
+      font-size: 2em;
+      color: #ff4d6d;
+      animation: bounce 2s infinite;
+      margin-top: 10px;
+      transform: rotate(90deg); /* Aponta para baixo */
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: rotate(90deg) translateY(0); }
+      50% { transform: rotate(90deg) translateY(5px); }
+    }
+
+    .caption {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 1.5em;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px 20px;
+      padding: 60px 20px;
+      max-width: 1000px;
+      width: 100%;
+      z-index: 1;
+      position: relative;
+    }
+
+    .gallery-item {
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #111;
+      box-shadow: 0 0 10px rgba(255, 77, 109, 0.3);
+      z-index: 1;
+      position: relative;
+    }
+
+    .gallery-item img,
+    .gallery-item video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background-color: #ff4d6d;
+      transform: rotate(-45deg);
+      animation: float 6s infinite ease-in-out;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff4d6d;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(-45deg); opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(-45deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Título e Temporizador -->
+  <header>
+    <h1>Nosso Dia 01</h1>
+    <div class="timer" id="timer"></div>
+    <div class="arrow-down">➤</div>
+    <div class="caption">Este é o tempo que meus dias tem sido muito mais coloridos.</div>
+  </header>
+
+  <!-- Galeria de Fotos/Vídeos -->
+  <div class="gallery">
+    <div class="gallery-item"><img src="https://raw.githubusercontent.com/yagosammm/nosso-dia-01/main/IMG-20230927-WA0016.jpg" alt="Foto 1"></div>
+    <div class="gallery-item"><img src="https://raw.githubusercontent.com/yagosammm/nosso-dia-01/main/IMG-20231126-WA0172.jpg" alt="Foto 2"></div>
+    <div class="gallery-item"><video controls src="https://raw.githubusercontent.com/yagosammm/nosso-dia-01/main/VID-20240603-WA0257.mp4"></video></div>
+    <div class="gallery-item"><img src="https://raw.githubusercontent.com/yagosammm/nosso-dia-01/main/IMG-20231126-WA0183.jpg" alt="Foto 3"></div>
+
+    <div class="gallery-item"><img src="https://raw.githubusercontent.com/yagosammm/nosso-dia-01/main/IMG-20231126-WA0130.jpg" alt="Foto 4"></div>
+    <div class="gallery-item"><img src="https://raw.githubusercontent.com/yagosammm/nosso-dia-01/main/IMG-20231118-WA0064.jpg" alt="Foto 5"></div>
+    <div class="gallery-item"><video controls src="https://raw.githubusercontent.com/yagosammm/nosso-dia-01/main/VID-20231126-WA0196.mp4"></video></div>
+    <div class="gallery-item"><img src="https://raw.githubusercontent.com/yagosammm/nosso-dia-01/main/IMG-20240530-WA0329.jpg" alt="Foto 6"></div>
+
+    <div class="gallery-item"><img src="https://raw.githubusercontent.com/yagosammm/nosso-dia-01/main/IMG-20231126-WA0177.jpg" alt="Foto 7"></div>
+    <div class="gallery-item"><img src="https://raw.githubusercontent.com/yagosammm/nosso-dia-01/main/IMG-20231126-WA0167.jpg" alt="Foto 8"></div>
+    <div class="gallery-item"><img src="https://raw.githubusercontent.com/yagosammm/nosso-dia-01/main/IMG-20240610-WA0014.jpg" alt="Foto 9"></div>
+    <div class="gallery-item"><img src="https://raw.githubusercontent.com/yagosammm/nosso-dia-01/main/IMG-20250401-WA0078.jpg" alt="Foto 10"></div>
+  </div>
+
+  <!-- Música do SoundCloud -->
+  <iframe width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay"
+    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1026902500&color=%23ff5500&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false"></iframe>
+
+  <!-- Controle de volume SoundCloud: use os controles nativos do player -->
+
+  <!-- Temporizador JS -->
+  <script>
+    const startDate = new Date("2024-01-01T00:00:00");
+
+    function updateTimer() {
+      const now = new Date();
+      let delta = Math.floor((now - startDate) / 1000);
+
+      const secondsInMinute = 60;
+      const secondsInHour = 3600;
+      const secondsInDay = 86400;
+      const secondsInMonth = secondsInDay * 30;
+      const secondsInYear = secondsInDay * 365;
+
+      const years = Math.floor(delta / secondsInYear);
+      delta %= secondsInYear;
+
+      const months = Math.floor(delta / secondsInMonth);
+      delta %= secondsInMonth;
+
+      const days = Math.floor(delta / secondsInDay);
+      delta %= secondsInDay;
+
+      const hours = Math.floor(delta / secondsInHour);
+      delta %= secondsInHour;
+
+      const minutes = Math.floor(delta / secondsInMinute);
+      const seconds = delta % secondsInMinute;
+
+      document.getElementById("timer").innerHTML = `
+        <div class="time-part"><strong>${years}</strong> anos</div>
+        <div class="time-part"><strong>${months}</strong> meses</div>
+        <div class="time-part"><strong>${days}</strong> dias</div>
+        <div class="time-part"><strong>${hours}</strong> horas</div>
+        <div class="time-part"><strong>${minutes}</strong> minutos</div>
+        <div class="time-part"><strong>${seconds}</strong> segundos</div>
+      `;
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  </script>
+
+  <!-- Corações flutuantes -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 4 + Math.random() * 4 + "s";
+      heart.style.bottom = "0";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
